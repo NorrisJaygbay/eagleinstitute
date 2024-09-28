@@ -36,23 +36,23 @@ menu.onclick = function(){
 home.addEventListener('click', ()=>{
     menu.classList.toggle("openclose");
     menu2.classList.toggle("navcollapsoneactive");
-    // menu22.classList.toggle("navbarlistacive");
+    menu22.classList.toggle("navbarlistacive");
 })
 
 about.addEventListener('click', ()=>{
     menu.classList.toggle("openclose");
     menu2.classList.toggle("navcollapsoneactive");
-    // menu22.classList.toggle("navbarlistacive");
+    menu22.classList.toggle("navbarlistacive");
 })
 services.addEventListener('click', ()=>{
     menu.classList.toggle("openclose");
     menu2.classList.toggle("navcollapsoneactive");
-    // menu22.classList.toggle("navbarlistacive");
+    menu22.classList.toggle("navbarlistacive");
 })
 contact.addEventListener('click', ()=>{
     menu.classList.toggle("openclose");
     menu2.classList.toggle("navcollapsoneactive");
-    // menu22.classList.toggle("navbarlistacive");
+    menu22.classList.toggle("navbarlistacive");
 })
 // for nav bar and hamburger ends
 
