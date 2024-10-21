@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technology</title>
+   
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/path/to/your/styles.css"> <!-- Your custom CSS file -->
+    <link rel="icon" href="/images/eagle.png">
+
+    <style>
+        body{
+            /* background-color: #495057; */
+        }
+        .container {
+            max-width: 400px; /* Limit width of the form */
+            margin: auto; /* Center the form */
+            padding: 20px; /* Add padding around the form */
+            border: 1px solid #dee2e6; /* Light gray border */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+            background-color: #f9f9f9; /* White background */
+        }
+
+        h2 {
+            font-weight: 500; /* Set font weight */
+        }
+
+        .btn {
+            margin-top: 10px; /* Space above the button */
+        }
+        .log-in-para{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            font-size: .9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <form action="/login" method="POST">
+            <h2 class="text-center mb-4">Log In</h2>
+            
+            <div class="mb-3">
+                <input type="text" class="form-control" name="idnumber" id="idnumber" placeholder="Enter ID Number" required>
+            </div>
+            
+            <div class="mb-3">
+                <input type="password" name="password" class="form-control" id="password" placeholder="Enter Password" required>
+            </div>
+            <button type="submit" id="button" class="btn btn-primary w-100">Submit</button>
+        </form>
+        <div class="log-in-para">
+            <p>Not a staff</p>
+            <a href="/form">Apply for course</a>
+        </div>
+    </div>
+</body>
+</html>

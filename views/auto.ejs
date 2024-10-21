@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technolo</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="icon" href="/images/eagle.png">
+    <style>
+        .form-container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        .form-title {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .generated-fields {
+            margin-top: 20px;
+        }
+        .generated-field {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="d-flex" id="wrapper">
+        <!-- Sidebar -->
+        <div class="bg-light border-right" id="sidebar-wrapper">
+            <!-- <div class="sidebar-heading">Dashboard</div> -->
+            <div class="list-group aside ">
+                <a href="/dashboard" class="list-group-item home">Apply Student</a>
+                <a href="/Registeredstudent" class="list-group-item">Registered Student</a>                
+                <a href="#" class="list-group-item">Courses</a>
+                <a href="/auto" class="list-group-item">Student Information</a>
+                <!-- <a href="#" class="list-group-item">Settings</a> -->
+                <!-- <a href="#" class="list-group-item">Logout</a> -->
+            </div>
+        </div>
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+                <button class="btn btn-primary" id="menu-toggle"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrows-expand-vertical" viewBox="0 0 16 16">
+                    <path d="M8 15a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5M.146 8.354a.5.5 0 0 1 0-.708l2-2a.5.5 0 1 1 .708.708L1.707 7.5H5.5a.5.5 0 0 1 0 1H1.707l1.147 1.146a.5.5 0 0 1-.708.708zM10 8a.5.5 0 0 1 .5-.5h3.793l-1.147-1.146a.5.5 0 0 1 .708-.708l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L14.293 8.5H10.5A.5.5 0 0 1 10 8"/>
+                  </svg></button>
+                <h3 class="ml-3">Student Information</h3>
+            </nav>
+
+            <div class="container-fluid">
+                <!-- <h2 class="mt-4">User Information</h2> -->
+                <div class="container form-container">
+                    <h2 class="form-title">User Registration</h2>
+                    <form id="userForm">
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="username" name="username" placeholder="Enter your full name" required>
+                        </div>
+                        
+                        <div class="generated-fields">
+                            <p class="generated-field">ID Number: <span id="generatedIdNumber"></span></p>
+                            <p class="generated-field">Password: <span id="generatedPassword"></span></p>
+                        </div>
+                        
+                        <button type="button" class="btn btn-primary w-100" onclick="generateCredentials()">Generate ID and Password</button>
+                        <button type="submit" class="btn btn-success w-100 mt-3" id="submitBtn" disabled>Submit</button>
+                    </form>
+
+                    
+                </div>
+            
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="/js/dashboard.js"></script>
+    <script>
+        function generateCredentials() {
+            const idNumber = Math.floor(Math.random() * 100000).toString().padStart(5, '0'); // 5-digit ID
+            const password = Math.random().toString(36).slice(-6); // 6-character password
+
+            document.getElementById('generatedIdNumber').textContent = idNumber;
+            document.getElementById('generatedPassword').textContent = password;
+
+            document.getElementById('submitBtn').disabled = false;
+
+            // Store values in the form data attributes
+            document.getElementById('userForm').dataset.idNumber = idNumber;
+            document.getElementById('userForm').dataset.password = password;
+        }
+
+        document.getElementById('userForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent default form submission
+
+            // Get form data
+            const formData = {
+                username: document.getElementById('username').value,
+                id_number: document.getElementById('generatedIdNumber').textContent,
+                password: document.getElementById('generatedPassword').textContent,
+            };
+
+            // Send data to server using Fetch API
+            fetch('/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            })
+            .then(response => response.text())
+            .then(result => {
+                alert(result); // Show success message
+                document.getElementById('userForm').reset(); // Reset the form
+                document.getElementById('generatedIdNumber').textContent = ''; // Clear generated fields
+                document.getElementById('generatedPassword').textContent = '';
+                document.getElementById('submitBtn').disabled = true; // Disable submit button again
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.'); // Show error message
+            });
+        });
+    </script>
+</body>
+</html>
+

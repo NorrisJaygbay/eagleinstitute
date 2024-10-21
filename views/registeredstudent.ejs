@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technology</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="icon" href="/images/eagle.png">
+</head>
+<body>
+    <div class="d-flex" id="wrapper">
+        <!-- Sidebar -->
+        <div class="bg-light border-right" id="sidebar-wrapper">
+            <!-- <div class="sidebar-heading">Dashboard</div> -->
+            <div class="list-group aside ">
+                <a href="/dashboard" class="list-group-item home">Apply Student</a>
+                <a href="/Registeredstudent" class="list-group-item">Registered Student</a>                
+                <a href="#" class="list-group-item">Courses</a>
+                <a href="/auto" class="list-group-item">Student Information</a>
+                <!-- <a href="#" class="list-group-item">Settings</a> -->
+                <!-- <a href="#" class="list-group-item">Logout</a> -->
+            </div>
+        </div>
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+                <button class="btn btn-primary" id="menu-toggle"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrows-expand-vertical" viewBox="0 0 16 16">
+                    <path d="M8 15a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5M.146 8.354a.5.5 0 0 1 0-.708l2-2a.5.5 0 1 1 .708.708L1.707 7.5H5.5a.5.5 0 0 1 0 1H1.707l1.147 1.146a.5.5 0 0 1-.708.708zM10 8a.5.5 0 0 1 .5-.5h3.793l-1.147-1.146a.5.5 0 0 1 .708-.708l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L14.293 8.5H10.5A.5.5 0 0 1 10 8"/>
+                  </svg></button>
+                <h3 class="ml-3">Registered Student</h3>
+            </nav>
+
+            <div class="container-fluid">
+                <!-- <h2 class="mt-4">User Information</h2> -->
+                <table class="table table-striped table-bordered">
+                    <thead class="table-light">
+                        <tr>
+                            <th>ID</th>
+                            <th>Full Name</th>
+                            <th>Email</th>
+                            <th>Number</th>
+                            <th>Course</th>
+                        </tr>
+                    </thead>
+                    <tbody id="addedUsersTableBody"> <!-- ID added here -->
+                        <!-- <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr> -->
+                    </tbody>
+                </table>
+                
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="/js/dashboard.js"></script>
+
+    <script>
+        // Function to handle the Add button click event
+        function addUser(userId) {
+            // Fetch user data by ID (in a real scenario, you might want to fetch this from the server)
+            const user = users.find(user => user.id === userId); // Assuming users is an array containing all users
+    
+            if (user) {
+                // Create a new table row
+                const newRow = document.createElement('tr');
+    
+                // Add data for each column
+                newRow.innerHTML = `
+                    <td>${user.id}</td>
+                    <td>${user.fullname}</td>
+                    <td>${user.email || 'N/A'}</td>
+                    <td>${user.number}</td>
+                    <td>${user.course}</td>
+                `;
+    
+                // Append the new row to the second table's body
+                document.getElementById('addedUsersTableBody').appendChild(newRow);
+    
+                alert(`User with ID: ${userId} added to the table.`);
+            } else {
+                alert("User not found.");
+            }
+        }
+    
+        // Example user data (in a real application, this would come from your server or backend)
+        const users = [
+            { id: 1, fullname: 'John Doe', email: 'john@example.com', number: '123456789', course: 'Information Technology' },
+            { id: 2, fullname: 'Jane Smith', email: 'jane@example.com', number: '987654321', course: 'Software Engineering' },
+            // Add more users as needed...
+        ];
+    </script>
+    
+</body>
+</html>

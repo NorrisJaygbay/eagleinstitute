@@ -1,0 +1,80 @@
+#wrapper {
+    display: flex;
+    align-items: stretch;
+}
+#sidebar-wrapper {
+    min-height: 100vh;
+    width: 250px;
+    transition: all 0.5s;
+}
+#page-content-wrapper {
+    flex: 1;
+    padding: 20px;
+}
+.table {
+    margin-top: 20px;
+}
+.toggled #sidebar-wrapper {
+    margin-left: -250px;
+}
+
+/* Custom CSS */
+
+.table {
+    width: 100%;
+    margin: 20px 0;
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #dee2e6; /* Light gray border */
+}
+
+.table th {
+    /* background-color: #f8f9fa; Light background for header */
+    background-color: #007bff;
+    color: rgb(266, 266, 266);
+    /* color: #495057; Dark text for header */
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #f2f2f2; /* Light gray for even rows */
+}
+
+.table tbody tr:hover {
+    background-color: #e9ecef; /* Slightly darker on hover */
+}
+#wrapper {
+    display: flex;
+    align-items: stretch;
+}
+#sidebar-wrapper {
+    min-height: 100vh;
+    width: 250px;
+    transition: all 0.5s;
+}
+#page-content-wrapper {
+    flex: 1;
+    padding: 20px;
+}
+.table {
+    margin-top: 20px;
+}
+.toggled #sidebar-wrapper {
+    margin-left: -250px;
+}
+.aside a{
+    color: black;
+}
+.aside a:hover{
+    background-color: #007bff;
+    text-decoration: none;
+    color: rgb(266, 266, 266);
+}
+.aside.active{
+    background-color: #007bff; /* Change to desired active background color */
+    color: rgb(266, 266, 266);
+}

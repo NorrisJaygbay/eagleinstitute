@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technology</title>
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css
+    "> -->
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="icon" href="/images/eagle.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet"> 
+
+    <style>
+        /* body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        } */
+        .container {
+            max-width: 1200px;
+            margin: -170px auto 0;
+            padding: 20px;
+        }
+        header {
+            /* background-color: #002147; */
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        header p {
+            margin-top: 10px;
+            font-size: 1.2rem;
+        }
+        .about-section {
+            background-color: #fff;
+            padding: 50px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .about-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #002147;
+        }
+        .about-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        .history-section, .mission-section, .values-section {
+            margin-bottom: 30px;
+        }
+        .mission-section ul, .values-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        .mission-section ul li, .values-section ul li {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+            padding-left: 15px;
+            position: relative;
+        }
+        .mission-section ul li::before, .values-section ul li::before {
+            content: '✓';
+            color: #002147;
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+        .team-section {
+            margin: 40px 0;
+        }
+        .team-section h3 {
+            font-size: 1.8rem;
+            color: #002147;
+        }
+        .team-members {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .team-member {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            flex: 1 1 300px;
+            text-align: center;
+        }
+        .team-member img {
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+        .team-member h4 {
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        .team-member p {
+            font-size: 1rem;
+            color: #777;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #002147;
+            color: #fff;
+            margin-top: 40px;
+        }
+
+
+        /* for the contact */
+        .contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    color: #0056b3;
+}
+
+header p {
+    font-size: 1.1em;
+    color: #555;
+}
+
+.contact-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.contact-info, .contact-form {
+    flex: 1;
+    background-color: #fff;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.contact-info h2, .contact-form h2 {
+    font-size: 1.8em;
+    color: #0056b3;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.contact-info strong {
+    color: #333;
+}
+
+.contact-form {
+    flex: 2;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1.1em;
+    color: #333;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.submit-btn {
+    padding: 12px 25px;
+    background-color: #0056b3;
+    color: #fff;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #003d80;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .contact-details {
+        flex-direction: column;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    .contact-info, .contact-form {
+        margin-bottom: 30px;
+    }
+}
+
+    </style>
+    
+</head>
+<body>
+   <nav class="navbarcontrol">
+        <div class="navbarlogocont">
+            <a href="#top"><img src="/images/eagle.png" alt="vigil watch logo"></a>
+            <p>Technology</p>
+        </div>
+        <div class="navbarlistcont d-flex align-center">
+            <div class="navcollapsone">
+                <ol class="navbarlist">
+                    <li><a href="#home" class="home">Home</a></li>
+                    <li><a href="#about" class="about">About</a></li>
+                    <li><a href="#services" class="services">Services</a></li>
+                    <li><a href="#forcontact" class="contact">Contact</a></li>
+                </ol>
+                <div class="navbtncont">
+                    <button class="bothbtn signupbtn"><a href="/form">Apply For Course</a></button>
+                    <button class="bothbtn loginbtn"><a href="/login">Log In</a></button>
+                </div>
+            </div>
+            <div class="hamburgercont">
+                <div class="line line1"></div>
+                <div class="line line2"></div>
+                <div class="line line3"></div>
+            </div>
+        </div>    
+   </nav>
+   <section class="mainsection" id="home">
+        <!-- main1 -->
+        <section class="main1">
+            <div class="main2">
+                <img src="/images/img3.jpg" alt="Image 1">
+                <img src="/images/img1.jpg" alt="Image 2">
+                <img src="/images/img2.jpg" alt="Image 3">
+            </div>
+            <!-- Left and right controls -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+            <!-- Indicators -->
+            <div class="dot-container">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+            <!-- textsection -->
+            <div class="textsection">
+                <div class="textsectio-paracont">
+                    <p>With</p>
+                    <p>Eagle Technology</p>
+                    <p>Master the skills to</p>
+                    <p>drive your career.</p>
+                    <a href="/allcourses" class="contactbtn">View Courses <i class="fa-solid fa-arrow-right-long"></i></a>
+                </div>
+            </div>
+            <!-- textsection ends -->
+        </section>
+        <!-- main1 ends -->
+
+        <!-- for all courses control 1, 2, 3, 4-->
+        <div class="allcoursescontrol">
+            <!-- control course 1 and 2 -->
+            <div class="allcoursesdivone">
+                <!-- 1 course-->
+                <div class="allcoursesdivtwo"> 
+                    <div class="allcoursesdivthree">
+                        <img src="/images/infor.jpg" alt="">
+                        <div class="allcoursesdivfour">
+                            <a href="#">View Course</a>
+                        </div>
+                    </div>
+                    <div class="allcoursesdivfive">
+                        <p class="allcourses-para1">Information Technology</p>
+                        <div class="allcoursesline"></div>
+                        <p class="allcourses-para2">Eagle offers an innovative way to learn and grow from a beginner level to a certified expert in Information Technology within eighteen (18) months’ time. Our Hardware and Network Engineering career path helps you achieve just that.</p>
+                    </div> 
+                </div>
+                <!-- 1 course end-->
+                <!-- 2 course-->
+                <div class="allcoursesdivtwo">
+                    <div class="allcoursesdivthree">
+                        <img src="/images/data.png" alt="">
+                        <div class="allcoursesdivfour">
+                            <a href="#">View Course</a>
+                        </div>
+                    </div>
+                    <div class="allcoursesdivfive">
+                        <p class="allcourses-para1">Database Technology </p>
+                        <div class="allcoursesline"></div>
+                        <p class="allcourses-para2">Eagle offers an innovative way to learn and grow from a beginner level to a certified expert in Database Technology within eighteen (18) months’ time. Our Database Technology career path helps you achieve just that.</p>
+                    </div>
+                </div>
+                 <!-- 2 course end-->
+            </div>
+            <!-- control course 1 and 2 ends -->
+            <!-- control course 3 and 4 -->
+            <div class="allcoursesdivone">
+                <!-- 3 course-->
+                <div class="allcoursesdivtwo"> 
+                    <div class="allcoursesdivthree">
+                        <img src="/images/software.jpg" alt="">
+                        <div class="allcoursesdivfour">
+                            <a href="#">View Course</a>
+                        </div>
+                    </div>
+                    <div class="allcoursesdivfive">
+                        <p class="allcourses-para1">Software Engineering</p>
+                        <div class="allcoursesline"></div>
+                        <p class="allcourses-para2">Eagle offers an innovative way to learn and grow from a beginner level to a certified expert in Software Engineering within eighteen (18) months’ time. Our Software Engineering career path helps you achieve just that.</p>
+                    </div> 
+                </div>
+                <!-- 3 course end-->
+                <!-- 4 course-->
+                <div class="allcoursesdivtwo">
+                    <div class="allcoursesdivthree">
+                        <img src="/images/webdev.jpeg" alt="">
+                        <div class="allcoursesdivfour">
+                            <a href="#">View Course</a>
+                        </div>
+                    </div>
+                    <div class="allcoursesdivfive">
+                        <p class="allcourses-para1">Web Development</p>
+                        <div class="allcoursesline"></div>
+                        <p class="allcourses-para2">Eagle offers an innovative way to learn and grow from a beginner level to a certified expert in Web Development within eighteen (18) months’ time. Our Hardware and Network Engineering career path helps you achieve just that.</p>
+                    </div>
+                </div>
+                 <!-- 4 course end-->
+            </div>
+            <!-- control course 3 and 4 ends -->
+        </div>
+        <!-- for all courses control 1, 2, 3, 4 ends-->
+
+        <!-- for all courses control 5, 6, 7, 8-->
+        <div class="allcoursescontrol">
+            <!-- control course 1 and 2 -->
+            <div class="allcoursesdivone">
+                <!-- 1 course-->
+                <div class="allcoursesdivtwo"> 
+                    <div class="allcoursesdivthree">
+                        <img src="/images/infor.jpg" alt="">
+                        <div class="allcoursesdivfour">
+                            <a href="#">View Course</a>
+                        </div>
+                    </div>
+                    <div class="allcoursesdivfive">
+                        <p class="allcourses-para1">Information Technology</p>
+                        <div class="allcoursesline"></div>
+                        <p class="allcourses-para2">Eagle offers an innovative way to learn and grow from a beginner level to a certified expert in Information Technology within eighteen (18) months’ time. Our Hardware and Network Engineering career path helps you achieve just that.</p>
+                    </div> 
+                </div>
+                <!-- 1 course end-->
+                <!-- 2 course-->
+                <div class="allcoursesdivtwo">
+                    <div class="allcoursesdivthree">
+                        <img src="/images/data.png" alt="">
+                        <div class="allcoursesdivfour">
+                            <a href="#">View Course</a>
+                        </div>
+                    </div>
+                    <div class="allcoursesdivfive">
+                        <p class="allcourses-para1">Database Technology </p>
+                        <div class="allcoursesline"></div>
+                        <p class="allcourses-para2">Eagle offers an innovative way to learn and grow from a beginner level to a certified expert in Database Technology within eighteen (18) months’ time. Our Database Technology career path helps you achieve just that.</p>
+                    </div>
+                </div>
+                 <!-- 2 course end-->
+            </div>
+            <!-- control course 1 and 2 ends -->
+            <!-- control course 3 and 4 -->
+            <div class="allcoursesdivone">
+                <!-- 3 course-->
+                <div class="allcoursesdivtwo"> 
+                    <div class="allcoursesdivthree">
+                        <img src="/images/software.jpg" alt="">
+                        <div class="allcoursesdivfour">
+                            <a href="#">View Course</a>
+                        </div>
+                    </div>
+                    <div class="allcoursesdivfive">
+                        <p class="allcourses-para1">Software Engineering</p>
+                        <div class="allcoursesline"></div>
+                        <p class="allcourses-para2">Eagle offers an innovative way to learn and grow from a beginner level to a certified expert in Software Engineering within eighteen (18) months’ time. Our Software Engineering career path helps you achieve just that.</p>
+                    </div> 
+                </div>
+                <!-- 3 course end-->
+                <!-- 4 course-->
+                <div class="allcoursesdivtwo">
+                    <div class="allcoursesdivthree">
+                        <img src="/images/webdev.jpeg" alt="">
+                        <div class="allcoursesdivfour">
+                            <a href="#">View Course</a>
+                        </div>
+                    </div>
+                    <div class="allcoursesdivfive">
+                        <p class="allcourses-para1">Web Development</p>
+                        <div class="allcoursesline"></div>
+                        <p class="allcourses-para2">Eagle offers an innovative way to learn and grow from a beginner level to a certified expert in Web Development within eighteen (18) months’ time. Our Hardware and Network Engineering career path helps you achieve just that.</p>
+                    </div>
+                </div>
+                 <!-- 4 course end-->
+            </div>
+            <!-- control course 3 and 4 ends -->
+        </div>
+        <!-- studentcommunity -->
+        <div class="studentcommunity">
+            <div class="studentcommunity1">
+                <p class="sp1">Enjoy a great stydent community</p>
+                <p class="sp2">We are committed in brining Technology at your door step. The curriculum at
+                EAGLE is well organized and also have the
+                practical approach of the courses because they have changed my entire
+                learning methods beyond my imagination.</p>
+                <div class="sp3"></div>
+                <div class="sp4"></div>
+            </div>
+        </div> 
+        <!-- studentcommunity ends -->
+
+
+
+
+        <!-- for all courses ends-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         
+        <!-- about section -->
+        <section class="aboutsection" id="about">
+            <div class="aboutsectiondivone">
+               <div>
+                    <p>About <span class="spanaboutus">Us</span></p>
+                    <p>At Eagle Technology, We Empower Future Leaders Through Education and Innovation</p>
+               </div>
+            </div>
+
+         <!-- About Section -->
+    <div class="container">
+        <section class="about-section">
+            <!-- <h2>About Us</h2> -->
+            <div class="history-section">
+                <h3 style="font-size:1.5rem; text-align: center; color: #002147; ">Our History</h3>
+                <p>Founded in 1985, our school has been at the forefront of educational excellence for over three decades. Our commitment to nurturing young minds and fostering a culture of curiosity and innovation has made us one of the leading schools in the region.</p>
+            </div>
+
+            <div class="mission-section">
+                <h3 style="font-size:1.5rem; text-align: center; color: #002147; ">Our Mission</h3>
+                <p>We strive to provide a learning environment that promotes academic excellence, personal growth, and social responsibility. Our mission is to:</p>
+                <ul>
+                    <li>Equip students with the knowledge and skills to succeed in a rapidly changing world.</li>
+                    <li>Foster critical thinking, creativity, and a love for lifelong learning.</li>
+                    <li>Encourage respect, diversity, and inclusion within our community.</li>
+                </ul>
+            </div>
+
+            <div class="values-section">
+                <h3 style="font-size:1.5rem; text-align: center; color: #002147; ">Our Core Values</h3>
+                <p>Our school is built on a foundation of strong values that guide everything we do. These values include:</p>
+                <ul>
+                    <li>Integrity and Honesty</li>
+                    <li>Respect for Diversity</li>
+                    <li>Academic Excellence</li>
+                    <li>Community and Collaboration</li>
+                    <li>Innovation and Adaptability</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="team-section">
+            <h3 style="font-size:1.5rem; text-align:center; margin-bottom: 10px;">Meet Our Team</h3>
+            <div class="team-members">
+                <div class="team-member">
+                    <img src="/images/pre.png" alt="Principal Photo">
+                    <h4>John Doe</h4>
+                    <p>Principal</p>
+                </div>
+                <div class="team-member">
+                    <img src="/images/per2.jpg" alt="Vice Principal Photo">
+                    <h4>Jane Smith</h4>
+                    <p>Vice Principal</p>
+                </div>
+                <div class="team-member">
+                    <img src="/images/per3.png" alt="Teacher Photo">
+                    <h4>Michael Johnson</h4>
+                    <p>Head of Mathematics Department</p>
+                </div>
+                <!-- Add more team members as needed -->
+            </div>
+        </section>
+    </div>
+          
+
+        </section>
+
+        <!-- about section ends -->
+
+        <!-- services section -->
+         <section class="services" id="services">
+            <div class="servicesetiondivone">
+                <div>
+                    <p>Our <span class="spanaboutus">Services</span></p>
+                    <p>Providing quality education and support for all students.</p>
+                </div>
+            </div>
+            <div class="aboutsectiondivtwo">
+                <div class="aboutsectiondivtwo-one">
+                    <p>Academic Counseling</p>
+                    <p>Our academic counselors are here to guide students through their educational journey, helping them choose the right courses and majors.</p>
+                    <div class="aboutline"></div>
+                </div>
+                <div class="aboutsectiondivtwo-one">
+                    <p>Extracurricular Activities</p>
+                    <p>We offer a range of extracurricular activities, including , clubs, and arts programs to enhance students' overall development.</p>
+                    <div class="aboutline"></div>
+                </div>
+            </div>
+            <!-- <div class="aboutsectiondivtwo">
+                <div class="aboutsectiondivtwo-one">
+                    <p>Our Mission</p>
+                    <p>Our mission is to create a safer environment for individuals, businesses, and communities by delivering innovative security solutions and services. We strive to be the most reliable and trusted security provider, ensuring peace of mind for our clients through our unwavering commitment to excellence and our passion for service.</p>
+                    <div class="aboutline"></div>
+                </div>
+                <div class="aboutsectiondivtwo-one">
+                    <p>Our Vision</p>
+                    <p>At Vigil Watch, our vision is to become the leading force in community security and protection, empowering individuals and organizations with the confidence to live and operate in a safe and secure environment. We aim to set the standard for excellence in the security industry by continuously innovating, adapting to emerging threats, and fostering a culture of trust, responsibility, and vigilance. </p>
+                    <div class="aboutline"></div>
+                </div>
+            </div> -->
+
+         </section>
+
+        <!-- services section ends -->
+
+        <!-- contact section -->
+    
+        <!-- contact section ends -->
+
+        <div class="contact-container" id="forcontact">
+            <header>
+                <h1>Contact Us</h1>
+                <p>We’d love to hear from you! Fill in the form below or contact us through our office location.</p>
+            </header>
+    
+            <section class="contact-details">
+                <div class="contact-info">
+                    <h2>Our Office</h2>
+                    <div style="display: flex; align-items: center;">
+                        <i class="fa-solid fa-location-dot" style="color: #0056b3; font-size: 1.5rem; margin-right:5px;"></i>
+                        <p>12th Street Sinkor</p>
+                    </div>
+                    <div style="display: flex; align-items: center;">
+                        <i class="fa-solid fa-envelope" style="color: #0056b3; font-size: 1.5rem; margin-right:5px;"></i>
+                        <p>12th Street Sinkor</p>
+                    </div>
+                   
+                    <p><i class="fa-solid fa-phone" style="color: #0056b3; font-size: 1.5rem; margin-right:5px;"></i> +231775859462</p>
+                    <p><i class="fa-solid fa-clock" style="color: #0056b3; font-size: 1.5rem; margin-right:5px;"></i></i> Monday to Friday, 9 AM - 5 PM</p>
+                </div>
+    
+                <div class="contact-form">
+                    <h2>Send Us a Message</h2>
+                    <form action="/submit-contact" method="POST">
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Write your message here" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+
+
+
+        <!-- <footer>
+            <p>Vigil Watch &copy; 2024</p>
+        </footer> -->
+          <!-- for footer -->
+          
+        <!-- for foot -->
+        <div id="foot" style="height:;">
+            <p> &copy; 2024 Eagle Technology <a href="#" id="foota">Privacy Policy</a></p>
+            <p>|</p>
+            <p>Verify Certificate</p>
+            <p>|</p>
+            <p>Verify Deploma</p>
+        </div>
+        <!-- footer ends -->
+
+        <!-- <a href="#home"><i class="fa-solid fa-circle-up uparrow"></i></a> -->
+        <a href="#home"><i class="fa-solid fa-angle-up uparrow"></i></a>      
+    
+<script src="/js/index.js"></script>
+<script src="https://kit.fontawesome.com/3e247721a8.js" crossorigin="anonymous"></script>
+</body>
+</html>
