@@ -32,17 +32,55 @@ db.serialize(() => {
   });
 });
 
-// Create users table if it doesn't exist
+// Create the login table if it does not exist
 db.serialize(() => {
-    db.run(`
-      CREATE TABLE IF NOT EXISTS users (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        username TEXT NOT NULL,
-        id_number TEXT NOT NULL,
-        password TEXT NOT NULL
-      )
-    `);
+  db.run(`
+    CREATE TABLE IF NOT EXISTS login (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      idnumber TEXT NOT NULL,
+      password TEXT NOT NULL
+    )
+  `, (err) => {
+    if (err) {
+      console.error('Error creating login table:', err.message);
+    } else {
+      console.log('login table created or already exists.');
+    }
   });
+});
+// Route for login form submission
+app.post('/login', (req, res) => {
+  console.log(req.body);  // Log the request body to check if data is sent correctly
+  const { idnumber, password } = req.body;
+
+  if (!idnumber || !password) {
+    return res.status(400).send('ID number and password are required.');
+  }
+
+  const query = `SELECT * FROM login WHERE idnumber = ? AND password = ?`;
+  db.get(query, [idnumber, password], (err, row) => {
+    if (err) {
+      console.error('Error querying database:', err);
+      return res.status(500).send('Server error');
+    }
+
+    if (row) {
+      // If credentials match, redirect to dashboard
+      res.redirect('/dashboard');
+    } else {
+      // If credentials don't match, send an error message
+      res.status(401).send('Invalid ID number or password.');
+    }
+  });
+});
+
+db.run(`INSERT INTO login (idnumber, password) VALUES (?, ?)`, ['12345', 'mypassword'], function(err) {
+  if (err) {
+    console.error('Error inserting user:', err.message);
+  } else {
+    console.log('User inserted with ID:', this.lastID);
+  }
+});
 
 // Middleware to parse form data
 app.use(bodyParser.urlencoded({ extended: false }));
