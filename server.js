@@ -5,7 +5,7 @@ const sqlite3 = require('sqlite3').verbose();
 
 // Initialize the Express app and set the port
 const app = express();
-const port = 30001;
+const port = 30002;
 
 
 const path = require('path');
